@@ -1,38 +1,81 @@
-.App {
-  text-align: center;
-}
+:root {
+  /* Colors */
+  /* blue: hsl(207, 90%, 61%) */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+  --hue: 143;
+  --sat: 76%;
+  --lig: 40%;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  --first-color-dark: hsl(var(--hue), 100%, var(--lig));
+  --first-color-alt: hsl(var(--hue), var(--sat), 75%);
+  --title-color: hsl(var(--hue), 12%, 15%);
+  --text-color-light: hsl(var(--hue), 8%, 75%);
+  --text-color-lighten: hsl(var(--hue), 8%, 92%);
+
+  --title-color: hsl(var(--hue), 12%, 95%);
+  --text-color: hsl(var(--hue), 12%, 75%);
+  --body-color: hsl(var(--hue), 100%, 0%);
+  --container-color: hsl(var(--hue), 100%, 40%);
+  --first-color-dark: hsl(var(--hue), 100%, var(--lig));
+
+  /* fuentes del archivo */
+  --body-font: 'Poppins', sans-serif;
+  ;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /* Reponsive typografia */
+  @media screen and (min-width: 968px) {
+    :root {
+      --h2-font-size: 1.5rem;
+      --h3-font-size: 1.25rem;
+      --normal-font-size: 1rem;
+      --small-font-size: .875rem;
+      --smaller-font-size: .813rem;
+    }
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Selectores */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: .3s;
+  /* For animation dark mode*/
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: 600;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.calculator{
+  width: 16.25rem;
+  max-width: 968px;
+  margin: 3rem 1.5rem 0rem;
+  border-radius: .5rem;
+  background: rgba(17, 27, 18, 0.295);
+}
+
+.row {
+  margin: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
